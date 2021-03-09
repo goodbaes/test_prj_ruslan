@@ -99,13 +99,13 @@ class ForShadowContainer extends StatelessWidget {
 }
 
 class TextReadField extends StatelessWidget {
-  const TextReadField({
+  TextReadField({
     Key key,
     @required this.a,
   }) : super(key: key);
 
   final TextData a;
-
+  final ScrollController scrollController = ScrollController();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -120,6 +120,7 @@ class TextReadField extends StatelessWidget {
             margin: EdgeInsets.fromLTRB(16, 16, 16, 0),
             // padding: EdgeInsets.fromLTRB(16, 16, 16, 0),
             child: SingleChildScrollView(
+              controller: scrollController,
               child: Text('${a.textData}'),
             ),
           ),
